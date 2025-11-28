@@ -1,0 +1,809 @@
+/* Importa a fonte para um visual mais moderno e limpo */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Variáveis CSS para cores e tamanhos (Foco nas cores do logo: Azul, Vermelho, Branco) */
+:root {
+    --primary-color: #0A1931; /* Azul Marinho Profundo (Confiança) */
+    --secondary-color: #E74C3C; /* Vermelho Alerta/Urgência (CTA) */
+    --text-light: #F8F9FA; /* Branco/Cinza Claro para texto em fundos escuros (Legibilidade UX) */
+    --text-dark: #212529; /* Preto para texto em fundos claros */
+    --bg-primary: #040E1B; /* Fundo principal: Azul Escuro Quase Preto */
+    --bg-secondary: #0A1931; /* Fundo secundário para contraste: Azul Marinho */
+    --font-family: 'Montserrat', sans-serif;
+
+    /* VARIÁVEIS DO MENU CIRCULAR (AJUSTADAS PARA TAMANHO MENOR: 60px) */
+    --menu-shape-color: #fff;
+    --menu-shape-background: var(--secondary-color);
+    --menu-shape-hover-color: var(--secondary-color);
+    --menu-shape-background-hover: #c0392b;
+    --menu-shape-active-focus: #8b0000;
+    --menu-size: 60px; /* Tamanho do botão principal */
+    --menu-font-size: 24px; /* Tamanho dos ícones nos itens */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    background-color: var(--bg-primary); /* Novo fundo principal escuro */
+    color: var(--text-light);
+}
+
+/* Estrutura e Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    height: 100%;
+}
+
+/* Tipografia */
+h1, h2, h3 {
+    color: var(--text-light); 
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+h2 { 
+    font-size: 2.5em; 
+    text-align: center; 
+    margin-bottom: 50px;
+    border-bottom: 3px solid var(--secondary-color); /* Linha vermelha de destaque */
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Botões (CTAs - Vermelho para Urgência) */
+.btn {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.4); /* Sombra para destaque CTA */
+}
+
+.btn-primary:hover {
+    background: #c0392b; 
+    transform: translateY(-2px); /* Efeito UX de clique/atração */
+}
+
+/* --- CABEÇALHO & NAVEGAÇÃO (Azul Marinho) --- */
+.header {
+    background-color: var(--bg-secondary); /* Azul Marinho */
+    color: #fff;
+    padding: 10px 0;
+    height: 90px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+}
+
+.logo {
+    height: 80px; 
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05); /* Pequeno efeito de UX ao passar o mouse */
+}
+.logo_img{
+    border-radius: 50%;
+    height: 100%;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 35px;
+}
+
+.main-nav ul li a {
+    color: var(--text-light);
+    font-weight: 600;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+}
+
+.main-nav ul li a:hover {
+    color: var(--secondary-color); /* Link ativo/hover em vermelho */
+    border-bottom: 2px solid var(--secondary-color);
+    text-decoration: none;
+}
+
+/* --- SEÇÃO HERO/BANNER (Urgência) --- */
+.hero {
+    /* Usando a imagem de fundo que você forneceu */
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://uploads.onecompiler.io/4443s992k/4443s8g2v/Gemini_Generated_Image_5gemd75gemd75gem.png') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 120px 0;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid var(--secondary-color); /* Borda inferior vermelha */
+}
+
+.hero h1 {
+    font-size: 3.8em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    color: #CED4DA; /* Cinza claro para suavizar */
+}
+
+/* --- SEÇÕES GERAIS --- */
+section {
+    padding: 80px 0;
+    background-color: var(--bg-primary); 
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+section:nth-child(even) { /* Seções pares em azul marinho mais claro */
+    background-color: var(--bg-secondary);
+}
+
+/* --- NOVA SEÇÃO: SERVIÇOS (CONTAINER DO MENU) --- */
+.services-menu-section {
+    padding: 100px 0;
+    background-color: var(--bg-primary);
+    text-align: center;
+}
+.services-menu-section p {
+    margin-bottom: 50px;
+}
+
+/* --- CÓDIGO DO MENU CIRCULAR --- */
+
+.circular-menu {
+    font-size: 20px;
+    /* CENTRALIZADO NA SEÇÃO */
+    position: relative;
+    margin: 50px auto 0; 
+    width: var(--menu-size);
+    height: var(--menu-size);
+    padding: 0;
+    transform: none;
+    z-index: 10;
+}
+
+.circular-menu__button {
+    display: none;
+}
+.circular-menu__button:checked + .circular-menu__icon {
+    transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+.circular-menu__button:checked + .circular-menu__icon > .hamburger-bar:nth-child(1) {
+    transform: translate3d(0, 0, 0) rotate(45deg);
+}
+.circular-menu__button:checked + .circular-menu__icon > .hamburger-bar:nth-child(2) {
+    transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+.circular-menu__button:checked + .circular-menu__icon > .hamburger-bar:nth-child(3) {
+    transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+.circular-menu__button:checked ~ .circular-menu__item {
+    transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+}
+
+/* Posições dos itens do menu (Raio ajustado para o tamanho de 60px) */
+.circular-menu__button:checked ~ .circular-menu__item:nth-of-type(1) {
+    transition-duration: 0.18s;
+    transform: translate3d(40px, -69px, 0); 
+}
+.circular-menu__button:checked ~ .circular-menu__item:nth-of-type(2) {
+    transition-duration: 0.28s;
+    transform: translate3d(-80px, 0px, 0); 
+}
+.circular-menu__button:checked ~ .circular-menu__item:nth-of-type(3) {
+    transition-duration: 0.38s;
+    transform: translate3d(-40px, 69px, 0); 
+}
+.circular-menu__button:checked ~ .circular-menu__item:nth-of-type(4) {
+    transition-duration: 0.48s;
+    transform: translate3d(40px, 69px, 0); 
+}
+.circular-menu__button:checked ~ .circular-menu__item:nth-of-type(5) {
+    transition-duration: 0.58s;
+    transform: translate3d(80px, 0px, 0); 
+}
+
+.circular-menu__icon, .circular-menu__item {
+    background: var(--menu-shape-background);
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    color: var(--menu-shape-color);
+    height: var(--menu-size); 
+    line-height: var(--menu-size);
+    margin-left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transform: translate3d(0, 0, 0);
+    transition: transform ease-out 0.2s;
+    width: var(--menu-size);
+}
+.circular-menu__icon {
+    transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    z-index: 2;
+}
+.circular-menu__icon:hover {
+    transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+}
+.circular-menu__icon > .hamburger {
+    background: var(--menu-shape-color);
+    display: block;
+    width: 25px;
+    height: 3px;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -1.5px;
+    position: absolute;
+    top: 50%;
+    transition: transform 0.2s;
+}
+.circular-menu__icon > .hamburger-bar:nth-child(1) {
+    transform: translate3d(0, -8px, 0);
+}
+.circular-menu__icon > .hamburger-bar:nth-child(2) {
+    transform: translate3d(0, 0, 0);
+}
+.circular-menu__icon > .hamburger-bar:nth-child(3) {
+    transform: translate3d(0, 8px, 0);
+}
+.circular-menu__item {
+    font-size: var(--menu-font-size);
+}
+.circular-menu__item:nth-of-type(1),
+.circular-menu__item:nth-of-type(2),
+.circular-menu__item:nth-of-type(3),
+.circular-menu__item:nth-of-type(4),
+.circular-menu__item:nth-of-type(5) {
+    transition-duration: 0.18s;
+}
+.circular-menu__item:hover {
+    color: var(--menu-shape-hover-color);
+    background: var(--menu-shape-background-hover);
+}
+.circular-menu__item:active,
+.circular-menu__item:focus {
+    color: var(--menu-shape-active-focus);
+}
+
+/* --- FIM: CÓDIGO DO MENU CIRCULAR --- */
+
+
+/* --- SOBRE NÓS/TEXTO --- */
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 250px;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 3px solid var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+}
+
+/* --- ÁREAS DE ATUAÇÃO (Grid com destaque de cor) --- */
+.grid-3 {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.expertise-item {
+    background: var(--bg-secondary); 
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    border-bottom: 5px solid var(--secondary-color); /* Borda vermelha inferior */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.expertise-item:hover {
+    background: #152A4A; /* Fundo mais claro ao hover */
+    transform: translateY(-5px); /* Efeito flutuante */
+}
+
+.expertise-item h3 {
+    color: var(--secondary-color); /* Títulos em vermelho */
+}
+
+/* --- DEPOIMENTOS (UX: Credibilidade e Confiança) --- */
+.testimonials {
+    background-color: var(--bg-secondary);
+}
+
+.grid-2 {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-content: center;
+}
+
+.testimonial-item {
+    background: var(--bg-primary);
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    position: relative;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.client-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 3px solid var(--secondary-color);
+    float: left; /* Alinha a foto à esquerda */
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.1em;
+    color: var(--text-light);
+    overflow: hidden; /* Limpa o float */
+    padding-top: 10px;
+}
+
+.client-name {
+    font-weight: 600;
+    display: block;
+    margin-top: 15px;
+    color: var(--secondary-color);
+    text-align: right;
+    clear: both;
+}
+
+/* --- PROCESSO DE ATENDIMENTO/COMO FUNCIONA --- */
+.process-steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.step {
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid var(--primary-color);
+    transition: border-color 0.3s ease;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+}
+
+.step:hover {
+    border-top: 5px solid var(--secondary-color); /* Vermelho ao hover */
+}
+
+.process-steps .step span {
+    background-color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* --- FORMAS DE PAGAMENTO (Foco em Profissionalismo) --- */
+.payment-methods {
+    text-align: center;
+    background-color: var(--bg-primary);
+}
+
+.payment-methods ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.payment-methods ul li {
+    background-color: var(--bg-secondary);
+    margin: 10px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* --- CONTATO (Urgência e Facilidade) --- */
+.contact {
+    background-color: var(--bg-secondary);
+}
+
+/* --- RODAPÉ (Profissionalismo) --- */
+.footer {
+    background-color: #000000; /* Preto sólido para o rodapé */
+    padding: 30px 0;
+    font-size: 0.9em;
+    border-top: 5px solid var(--secondary-color);
+}
+
+.footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* --- RESPONSIVIDADE (Ajustes) --- */
+@media (max-width: 1000px) {
+    .grid-2 {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        height: auto;
+        padding-top: 10px;
+    }
+    .main-nav ul {
+        margin-top: 15px;
+    }
+    .hero h1 {
+        font-size: 3em;
+    }
+    section {
+        padding: 50px 0;
+    }
+    .about-content {
+        gap: 30px;
+    }
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+    .process-steps {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+#advogados_proximos{
+    bor
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container_2 {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-behavior: smooth;
+    background: #131313;
+    font-family:'Helvetica Neue', sans-serif;
+}
+
+#hashtag {
+  font-size: 80px;
+  color: #BF2E97;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.popover {
+   display: none;
+   box-shadow: 0px 6px 8px rgba(19, 19, 19, .7);
+}
+
+.popover:target {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popover .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 0;
+  height: 0;
+  color: #fff;
+  background-color: #191919;
+  animation: 1s grow ease forwards;
+  text-align: center;
+}
+
+.nav_list  {
+  list-style-type: none;
+}
+
+.nav_list a {
+  text-decoration: none;
+  font-size: 50px;
+  color: #fff;
+}
+
+.nav_list_item {
+  height: 100%;
+  overflow: hidden;
+}
+
+.nav_list li {
+  padding: 15px 0;
+  text-transform: uppercase;
+  transform: translateY(200px);
+  opacity: 0;
+  animation: 2s slideUp ease forwards .5s;
+  position: relative;
+}
+
+.nav_list li::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 0px;
+  left: 0;
+  bottom: 10px;
+  background: #BF2E97; 
+  transition: all .5s ease;
+}
+
+.nav_list li:hover:before {
+      width: 100%;
+}
+
+.popover p {
+  padding: 50px;
+  opacity: 0;
+  animation: 1s fadeIn ease forwards 1s;
+}
+
+.popover .close::after {
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: #BF2E97;
+  color: #fff;
+  content: "×";
+  cursor: pointer;
+  opacity: 0; 
+  animation: 1s fadeIn ease forwards .5s;
+}
+
+@keyframes grow {
+  100% {
+    height: 90%;
+    width: 90%;
+ }
+}
+
+@keyframes fadeIn {
+100% {
+  opacity: 1;
+ }
+}
+
+@keyframes slideUp {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== MENU ANIMADO SERVIÇOS EMERGÊNCIA ===== */
+
+.emergency-menu {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 60px auto 0;
+}
+
+#toggle-emergency {
+    display: none;
+}
+
+.emergency-btn {
+    width: 120px;
+    height: 120px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.7);
+    transition: transform 0.4s ease;
+}
+
+#toggle-emergency:checked + .emergency-btn {
+    transform: rotate(45deg);
+}
+
+.emergency-item {
+    width: 95px;
+    height: 95px;
+    background: var(--primary-color);
+    color: var(--text-light);
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: 0.5s ease;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.emergency-item span {
+    font-size: 11px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+#toggle-emergency:checked ~ .item-1 {
+    transform: translateY(-140px) scale(1);
+    opacity: 1;
+}
+#toggle-emergency:checked ~ .item-2 {
+    transform: translateX(140px) scale(1);
+    opacity: 1;
+}
+#toggle-emergency:checked ~ .item-3 {
+    transform: translateY(140px) scale(1);
+    opacity: 1;
+}
+#toggle-emergency:checked ~ .item-4 {
+    transform: translateX(-140px) scale(1);
+    opacity: 1;
+}
+#toggle-emergency:checked ~ .item-5 {
+    transform: translate(-100px, -100px) scale(1);
+    opacity: 1;
+}
+
+.emergency-item:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+}
+ /* ===== MENU HORIZONTAL SERVIÇOS EMERGÊNCIA ===== */
+
+.emergency-menu-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.emergency-item-h {
+    width: 110px;
+    height: 110px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    transition: 0.3s ease;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.emergency-item-h span {
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.emergency-item-h:hover {
+    background: var(--secondary-color);
+    transform: translateY(-6px) scale(1.05);
+}
+ .servicos-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.servico-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: #0A1931;
+    color: white;
+    padding: 20px;
+    border-radius: 16px;
+    width: 200px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.servico-item i {
+    font-size: 36px;
+    color: #E63946;
+}
+
+.servico-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+a {
+    text-decoration: none;
+}
